@@ -1,0 +1,16 @@
+<div class="columns is-deskptop">
+    <div class="column is-half-desktop">
+        <h1>{{ aboutProject.title }}</h1>
+        <h3>{{ aboutProject.subtitle }}</h3>
+        <p>{{ aboutProject.description }}</p>
+    </div>
+    <div class="column is-half-desktop">
+        <!-- <h1>{{ author?.name + " " + author?.lastname }}</h1> -->
+        <h1>{{ getFullAuthorName() }}</h1>
+        <h3>{{ author?.bio }}</h3>
+        <div *ngFor="let link of author?.social">
+            <a [href]="link.url">{{ link.name }}</a>
+            <br>
+        </div>
+    </div>
+</div>

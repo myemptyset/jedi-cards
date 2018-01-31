@@ -1,0 +1,134 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+<h2>Here are some links to help you start: </h2>
+<button class="button is-primary is-loading"><i class="fa fa-bath" aria-hidden="true"></i></button>
+
+<div class="field">
+  <label class="label">Name</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Text input">
+  </div>
+</div>
+
+
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul> -->
+
+<!-- <h1>404</h1>
+<h2>Page not found</h2> -->
+
+<!-- div class row not-found
+div class col-xs-12 </text-center>
+h1 404
+h4 class vertical allign
+span page not found
+<h4><div></div></h4> -->
+
+
+<!-- <app-not-found></app-not-found> -->
+
+<!-- <div>
+  <h1>{{ title }}</h1>
+  <button (click)="onButtonClicked()">click me!</button>
+</div> -->
+
+<!-- <div class="row">
+  <div 
+    *ngIf="aboutProject != undefined && aboutProject != null" 
+    class="col-xs-4 col-xs-offset4">
+    <h1>{{ aboutProject.title }}</h1>
+    <h3>{{ aboutProject.subtitle }}</h3>
+    <p>{{ aboutProject.description }}</p>
+    <button (click)="onButtonClicked()">click me!</button>
+  </div>
+</div> --> 
+<!-- si el aboutProject és undefined petarà, així ho comprovem -->
+
+<!-- <div class="row">
+    <div 
+      *ngIf="aboutProject" 
+      class="col-xs-4 col-xs-offset4"
+      >
+      <h1>{{ aboutProject.title }}</h1>
+      <h3>{{ aboutProject.subtitle }}</h3>
+      <p>{{ aboutProject.description }}</p>
+    </div>
+  </div> -->
+
+  <!-- la condició pot ser mes curta pq es falsy -->
+
+  <!-- <div class="row">
+      <div 
+        class="col-xs-4 col-xs-offset4"
+        >
+        <h1>{{ aboutProject ? aboutProject.title : "" }}</h1>
+        <h3>{{ aboutProject?.subtitle }}</h3>
+        <p>{{ aboutProject?.description }}</p>
+      </div>
+  </div> -->
+    <!-- No cal el if, podem fer la comprovació rollo triada -->
+    <!-- {{ aboutProject?.author?.name }} Un altre exemple -->
+
+  <!-- <div class="row">
+      <div 
+        class="col-xs-4 col-xs-offset4"
+        >
+        <h1>{{ author?.name }}{{ author?.lastname }}</h1>
+        <h3>{{ author?.bio }}</h3>
+        <div>{{ author?.social[0].name }}</div>
+      </div>
+  </div> -->
+
+  <!-- <div class="row">
+      <div 
+        class="col-xs-4 col-xs-offset4"
+        >
+        <h1>{{ author?.name }}{{ author?.lastname }}</h1>
+        <h3>{{ author?.bio }}</h3>
+        <div *ngFor="let link of author.social">
+          <div>{{ link.name }}</div>
+          <div>{{ link.url }}</div>
+      </div>
+  </div> -->
+
+  <!-- <div class="row">
+      <div 
+        class="col-xs-4 col-xs-offset4"
+        >
+        <h1>{{ author?.name }}{{ author?.lastname }}</h1>
+        <h3>{{ author?.bio }}</h3>
+        <div *ngFor="let link of author.social">
+            <a href={{ link.url }}>{{ link.name }}</a>
+            <br>
+      </div>
+  </div> -->
+
+  <!-- <div class="row">
+      <div 
+        class="col-xs-4 col-xs-offset4"
+        >
+        <h1>{{ author?.name }}{{ author?.lastname }}</h1>
+        <h3>{{ author?.bio }}</h3>
+        <div *ngFor="let link of author.social">
+          <a [href]="link.url">{{ link.name }}</a>
+          <br>
+      </div>
+  </div> -->
+
+  <!-- <app-about></app-about> --> 
+
+  <router-outlet></router-outlet>
