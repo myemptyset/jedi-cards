@@ -1,0 +1,94 @@
+
+<h1>JEDI Cards Sign In</h1>
+<form #signInForm="ngForm">
+<div class="field">
+  <label class="label">Name</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Name" 
+      required
+      [(ngModel)]="user.name"
+      name = "name"
+      #name="ngModel">
+      <small *ngIf="name.invalid && name.dirty">Required field</small>
+  </div>
+</div>
+<div class="field">
+  <label class="label">Lastname</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Lastname" 
+    required
+    [(ngModel)]="user.lastName"
+    name = "lastName"
+    #lastName="ngModel">
+    <small *ngIf="lastName.invalid && lastName.dirty">Required field</small>
+  </div>
+</div>
+<div class="field">
+  <label class="label">Email</label>
+  <div class="control has-icons-left has-icons-right">
+    <input class="input is-danger" type="email" placeholder="Email input" 
+      required
+      [(ngModel)]="user.email"
+      name = "email"
+      #email="ngModel">
+      <small *ngIf="email.invalid && email.dirty">Required field</small>
+    <span class="icon is-small is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fas fa-exclamation-triangle"></i>
+    </span>
+  </div>
+  <p class="help is-danger">This email is invalid</p>
+</div>
+
+<div class="field">
+  <label class="label">Password</label>
+  <div class="control">
+    <input class="input" type="password" placeholder="Password" 
+      required
+      minlength="6"
+      [(ngModel)]="user.password"
+      name = "password"
+      #password="ngModel">
+      <small *ngIf="password.invalid && password.dirty">Required field and min 6 characters</small>
+  </div>
+</div>
+
+<div class="field">
+    <label class="label">Password</label>
+    <div class="control">
+      <input class="input" type="password" placeholder="Retype Password" 
+        required
+        minlength="6"
+        [(ngModel)]="passwordRepeat"
+        name = "passwordRepeat"
+        #pwdRepeat="ngModel">
+        <small *ngIf="pwdRepeat.invalid && pwdRepeat.dirty">Required field and min 6 characters</small>
+        <small *ngIf="pwdRepeat.dirty && !arePasswordsEqual()">Pwd not equal</small>
+    </div>
+  </div>
+
+<div class="field">
+  <div class="control">
+    <label class="checkbox">
+      <input type="checkbox">
+      I agree to the <a href="#">terms and conditions</a>
+    </label>
+  </div>
+</div>
+</form>
+
+<div class="field is-grouped">
+  <div class="control">
+    <a class="button is-link"
+    (click) = "onSend()"
+    [class.disabled] = "!signInForm.form.valid || !arePasswordsEqual()"
+    >Submit</a>
+  </div>
+  <div class="control">
+    <a class="button is-text"
+    >Cancel</a>
+  </div>
+</div>
+
