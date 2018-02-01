@@ -20,7 +20,7 @@ export class ApiService {
   ) { }
 
   signin(user: User): Promise<any> {
-    return this._http.post(this._apiUrl + "auth/signin", user).toPromise();
+    return this._http.post(this._apiUrl + 'auth/signin', user).toPromise();
   }
 
   login(email: string, password: string): Promise<any> {
@@ -32,7 +32,7 @@ export class ApiService {
   // es pot escriure email, password
 
   getDecks(): Promise<any> {
-    return this._http.get(this._apiUrl + "decks")
+    return this._http.get(this._apiUrl + 'decks')
     .toPromise()
     .catch(e => {
       if (e.status === 401) {
