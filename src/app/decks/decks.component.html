@@ -6,7 +6,7 @@
     <button (click)="onDeleteDeck(d.id)">Delete deck</button>
     <br>
   </div>    
-  <div *ngIf="!decks.lenght && !isLoading">Ops! You don't have any deck yet</div>
+  <div *ngIf="!decks.length && !isLoading">Ops! You don't have any deck yet</div>
 </div>
 <a [routerLink]="'/deck/create'" class="underline">
   Create a new deck
