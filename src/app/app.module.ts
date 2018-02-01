@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { routesAnna } from './routes';
 import { ApiService } from './_shared/_services/api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './_shared/_services/auth.service';
+import { CookieService } from 'ng2-cookies';
 // import { LoginComponent } from './login/login.component';
 // import { SigninComponent } from './signin/signin.component';
 
@@ -25,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule
   ],
   providers: [
-    ApiService
+    ApiService,
+    AuthService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })
