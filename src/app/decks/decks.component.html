@@ -1,7 +1,7 @@
 <h1>Your decks</h1>
 <div *ngFor="let d of decks">
   <div>
-    <p>{{ d.title }}</p>
+    <p [routerLink]="['/deck', d.id]">{{ d.title }}</p>
     <p>{{ d.description }}</p>
     <button (click)="onDeleteDeck(d.id)">Delete deck</button>
     <br>
