@@ -1,3 +1,10 @@
-<p>
-  decks works!
-</p>
+<h1>Your decks</h1>
+<div *ngFor="let d of decks">
+  <div>
+    <p>{{ d.title }}</p>
+    <p>{{ d.description }}</p>
+    <button (click) = OnDeleteDeck>Delete deck</button>
+    <br>
+  </div>    
+  <div *ngIf="!decks.lenght && !isLoading">Ops! You don't have any deck yet</div>
+</div>

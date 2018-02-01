@@ -31,5 +31,14 @@ export class ApiService {
   }
   // es pot escriure email, password
 
-
+  getDecks(): Promise<any> {
+    return this._http.get(this._apiUrl + "decks")
+    .toPromise()
+    .catch(e => {
+      if (e.status === 401) {
+        this._auth.logout();
+        this._router.navigateByUrl(this.loginUrl);
+      }
+    });
+  }
 }
