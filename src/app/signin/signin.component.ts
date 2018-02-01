@@ -19,15 +19,30 @@ export class SigninComponent {
 
   onSend() {
     // console.log(this.user.password);
-    this._api
-        .signin(this.user) //aixo es una promise
-        .then(response => { //then (la funcio q fara quan mhagi contestat)
+    // this._api
+    //     .signin(this.user) //aixo es una promise
+    //     .then(response => { //then (la funcio q fara quan mhagi contestat)
+    //       // el server mha respost
+    //       console.log(response);
+    //     })
+    //     .catch(error => {
+    //       console.log(error);
+    //     });
+    
+    const pepito = function(e) {
+      console.log(e);
+    };
+    const a = this._api.signin(this.user); //aixo es una promise
+
+
+    a.then(function(m) { //then (la funcio q fara quan mhagi contestat)
           // el server mha respost
-          console.log(response);
-        })
-        .catch(error => {
-          console.log(error);
+          console.log(m);
         });
+
+
+    a.catch(pepito);
+
   }
 
   arePasswordsEqual() {
