@@ -1,6 +1,8 @@
 
 <h1>JEDI Cards Sign In</h1>
-<form #signInForm="ngForm">
+<form #signInForm="ngForm"
+(keyup.enter)="isFormSendable(signInForm.valid) && onSend()"
+>
 <div class="field">
   <label class="label">Name</label>
   <div class="control">
@@ -83,8 +85,8 @@
   <div class="control">
     <a class="button is-link"
     (click) = "onSend()"
-    [class.disabled] = "!signInForm.form.valid || !arePasswordsEqual()"
-    >Submit</a>
+    [class.disabled] = "isFormSendable(signInForm.valid)"
+    >{{ isLoading ? 'Loading': 'Submit' }}</a>
   </div>
   <div class="control">
     <a class="button is-text"
@@ -92,3 +94,6 @@
   </div>
 </div>
 
+<!-- (submit)="isFormSendable(signInForm.valid) && onSend()" aixo funciona si tenim un button tipus submit -->
+
+<!-- no faria falta el onclick -->
