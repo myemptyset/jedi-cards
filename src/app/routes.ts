@@ -6,6 +6,7 @@ export const routesAnna: Routes = [
     {path: 'login', loadChildren: './login/login.module#LoginModule'},
     {path: 'signin', loadChildren: './signin/signin.module#SigninModule'},
     {path: 'decks', loadChildren: './decks/decks.module#DecksModule'},
+    { path: 'deck', loadChildren: './deck-detail/deck-detail.module#DeckDetailModule' },
     {path: '**', redirectTo: 'error', pathMatch: 'full'}
 ];
 

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import User from '../../_models/user.model';
 import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
+import Deck from '../../_models/deck.model';
 
 
 @Injectable()
@@ -42,6 +43,17 @@ export class ApiService {
     });
   }
 
+  getDeck(id: string): Promise<any> {
+		return this._http.get(this._apiUrl + 'decks/' + id)
+			.toPromise()
+      .catch(e => {
+        if (e.status === 401) {
+          this._auth.logout();
+          this._router.navigateByUrl(this.loginUrl);
+        }
+      });
+	}
+
   deleteDeck(id: string): Promise<any> {
     return this._http.delete(this._apiUrl + 'decks/' + id)
     .toPromise()
@@ -52,5 +64,27 @@ export class ApiService {
       }
     });
   }
+
+  putDeck(deck: Deck) {
+		return this._http.put(this._apiUrl + 'decks/' + deck.id, deck)
+		.toPromise()
+    .catch(e => {
+      if (e.status === 401) {
+        this._auth.logout();
+        this._router.navigateByUrl(this.loginUrl);
+      }
+    });
+	}
+
+	postDeck(deck: Deck) {
+		return this._http.post(this._apiUrl + 'decks', deck)
+		.toPromise()
+    .catch(e => {
+      if (e.status === 401) {
+        this._auth.logout();
+        this._router.navigateByUrl(this.loginUrl);
+      }
+    });
+	}
 
 }

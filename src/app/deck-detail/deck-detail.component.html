@@ -1,0 +1,13 @@
+<h1>Create a deck</h1>
+<div class="field">
+    <input class="input" type="text" name="title" [(ngModel)]="deck.title">
+</div>
+<div class="field">
+    <input class="input" type="text" name="description" [(ngModel)]="deck.description">
+</div>
+<div class="field">
+    <a class="button is-success" (click) = "onSend()">
+      create
+    </a>
+</div>
+  
