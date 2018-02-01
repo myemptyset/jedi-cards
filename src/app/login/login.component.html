@@ -23,8 +23,8 @@
 </div>
 <div class="field">
   <p class="control">
-    <a class="button is-success" (click)="onSend()" [class.disabled]="!password || !email || !isPasswordCorrect">
-      Login
+    <a class="button is-success" (click)="onSend()" [class.disabled]="!password || !email || !isPasswordCorrect || isLoading">
+      {{ isLoading ? 'loading' : 'login'}}
     </a>
   </p>
 </div>
