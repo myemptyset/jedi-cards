@@ -29,4 +29,16 @@ export class DecksComponent implements OnInit {
       console.log(error);
     });
   }
+
+  onDeleteDeck(id: string) {
+    this._api.deleteDeck(id)
+    .then(() => {
+      const i = this.decks.findIndex(d => d.id === id);
+      // find a seques retorna el deck
+      this.decks.splice(i, 1);
+      // esborra 1 element en aquell i
+    });
+// necessitem el then per esborrar al moment
+  }
+
 }

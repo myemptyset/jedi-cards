@@ -3,7 +3,7 @@
   <div>
     <p>{{ d.title }}</p>
     <p>{{ d.description }}</p>
-    <button (click) = OnDeleteDeck>Delete deck</button>
+    <button (click)="onDeleteDeck(d.id)">Delete deck</button>
     <br>
   </div>    
   <div *ngIf="!decks.lenght && !isLoading">Ops! You don't have any deck yet</div>

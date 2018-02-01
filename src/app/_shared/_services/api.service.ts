@@ -41,4 +41,16 @@ export class ApiService {
       }
     });
   }
+
+  deleteDeck(id: string): Promise<any> {
+    return this._http.delete(this._apiUrl + 'decks/' + id)
+    .toPromise()
+    .catch(e => {
+      if (e.status === 401) {
+        this._auth.logout();
+        this._router.navigateByUrl(this.loginUrl);
+      }
+    });
+  }
+
 }
