@@ -13,7 +13,10 @@ export class AppPopupComponent {
   // referenciat al html de decks amb []
   // podriem passar per l input la funcionalitat de esborrar la deck pero no mola, millor avisar a decks i q decks esborri
 
+  @Input() buttonNames: string;
+
   openPopup() {
+    console.log('hulaaaaa');
     this.isOpen = true;
   }
 

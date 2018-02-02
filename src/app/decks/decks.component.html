@@ -1,3 +1,4 @@
+<div>
 <h1>Your decks</h1>
 <div *ngFor="let d of decks">
   <div>
@@ -13,5 +14,10 @@
 </a>
 <app-popup
   #deletePopup
-  [popupTitle] = "'Atención'"
-></app-popup>
+  [popupTitle] = "'Alert'"
+>
+Hello!
+</app-popup>
+</div>
+
+<!-- [buttonNames] = "['Cancel', 'Accept']" -->
