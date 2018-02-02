@@ -1,16 +1,16 @@
-<div class="modal" *ngIf="isOpen">
+<div class="modal is-active" *ngIf="isOpen">
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title" *ngIf='popupTitle'>{{ PopupTitle }}</p>
+      <p class="modal-card-title" *ngIf='popupTitle'>{{ popupTitle }}</p>
       <button class="delete" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
       <ng-content></ng-content>
     </section>
     <footer class="modal-card-foot">
-      <button class="button is-success" (click)="onAccept()">{{ PopupTitle }}</button>
-      <button class="button" (click)="closePopup()">{{ PopupTitle }}</button>
+      <button class="button is-success" (click)="onAccept()">{{ popupTitle }}</button>
+      <button class="button" (click)="closePopup()">{{ popupTitle }}</button>
     </footer>
   </div>
 </div>
