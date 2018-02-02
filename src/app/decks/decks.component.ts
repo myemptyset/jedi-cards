@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import Deck from '../_models/deck.model';
 import { ApiService } from '../_shared/_services/api.service';
+import { AppPopupComponent } from '../_shared/components/app-popup/app-popup.component';
 
 @Component({
   selector: 'app-decks',
@@ -15,6 +16,8 @@ export class DecksComponent implements OnInit {
   constructor(
     private _api: ApiService
   ) {}
+
+  @ViewChild('deletePopup') deletePopup: AppPopupComponent;
 
   ngOnInit() {
     this._api
@@ -31,14 +34,15 @@ export class DecksComponent implements OnInit {
   }
 
   onDeleteDeck(id: string) {
-    this._api.deleteDeck(id)
-    .then(() => {
-      const i = this.decks.findIndex(d => d.id === id);
-      // find a seques retorna el deck
-      this.decks.splice(i, 1);
-      // esborra 1 element en aquell i
-    });
+    // this._api.deleteDeck(id)
+    // .then(() => {
+    //   const i = this.decks.findIndex(d => d.id === id);
+    //   // find a seques retorna el deck
+    //   this.decks.splice(i, 1);
+    //   // esborra 1 element en aquell i
+    // });
 // necessitem el then per esborrar al moment
+    this.deletePopup.openPopup();
   }
 
 }

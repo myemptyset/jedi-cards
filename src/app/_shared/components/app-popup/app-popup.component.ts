@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-app-popup',
+  selector: 'app-popup',
   templateUrl: './app-popup.component.html',
   styleUrls: ['./app-popup.component.less']
 })
-export class AppPopupComponent implements OnInit {
+export class AppPopupComponent {
 
-  constructor() { }
+  isOpen = false;
 
-  ngOnInit() {
+  openPopup() {
+    this.isOpen = true;
   }
 
 }
