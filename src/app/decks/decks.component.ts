@@ -12,6 +12,7 @@ export class DecksComponent implements OnInit {
 
   decks: Deck[] = [];
   isLoading = true;
+  private deckToDeleteId;
 
   constructor(
     private _api: ApiService
@@ -43,6 +44,15 @@ export class DecksComponent implements OnInit {
     // });
 // necessitem el then per esborrar al moment
     this.deletePopup.openPopup();
+    this.deckToDeleteId = id;
   }
+
+	onAcceptDelete() {
+		this._api.deleteDeck(this.deckToDeleteId)
+			.then(() => {
+				const i = this.decks.findIndex(d => d.id === this.deckToDeleteId);
+				this.decks.splice(i, 1);
+			});
+	}
 
 }

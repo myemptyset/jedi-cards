@@ -9,8 +9,8 @@
       <ng-content></ng-content>
     </section>
     <footer class="modal-card-foot">
-      <button class="button is-success">{{ PopupTitle }}</button>
-      <button class="button">{{ PopupTitle }}</button>
+      <button class="button is-success" (click)="onAccept()">{{ PopupTitle }}</button>
+      <button class="button" (click)="closePopup()">{{ PopupTitle }}</button>
     </footer>
   </div>
 </div>
