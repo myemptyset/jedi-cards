@@ -5,10 +5,12 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    AppPopupComponent,
+    FormsModule,
     CommonModule
   ],
-  declarations: [],
+  declarations: [
+    AppPopupComponent
+  ],
   exports: [
     FormsModule,
     CommonModule,
