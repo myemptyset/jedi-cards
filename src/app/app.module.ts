@@ -9,13 +9,15 @@ import { ApiService } from './_shared/_services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './_shared/_services/auth.service';
 import { CookieService } from 'ng2-cookies';
+import { AppPopupComponent } from './_shared/components/app-popup/app-popup.component';
+import { SharedModule } from './_shared/shared.module';
 // import { LoginComponent } from './login/login.component';
 // import { SigninComponent } from './signin/signin.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
     // LoginComponent,
     // SigninComponent
     // NotFoundComponent,
@@ -24,7 +26,8 @@ import { CookieService } from 'ng2-cookies';
   imports: [
     RouterModule.forRoot(routesAnna),
     HttpClientModule,
-    BrowserModule
+    BrowserModule,
+    SharedModule
   ],
   providers: [
     ApiService,
