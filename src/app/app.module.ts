@@ -11,13 +11,15 @@ import { AuthService } from './_shared/_services/auth.service';
 import { CookieService } from 'ng2-cookies';
 import { AppPopupComponent } from './_shared/components/app-popup/app-popup.component';
 import { SharedModule } from './_shared/shared.module';
+// import { AppAlertComponent } from './_shared/components/app-alert/app-alert.component';
 // import { LoginComponent } from './login/login.component';
 // import { SigninComponent } from './signin/signin.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // AppAlertComponent
     // LoginComponent,
     // SigninComponent
     // NotFoundComponent,
