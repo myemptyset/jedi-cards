@@ -39,3 +39,18 @@ export class AppComponent implements OnInit {
       });
     }
 }
+
+
+// event => {
+//   if (event instanceof NavigationStart) {
+//     const { url } = event;
+//     const isLogged = this._auth.isLogged();
+//     // es el mateix q const url = event.url
+//     if (url === this.loginUrl || url === this.signinUrl) {
+//       if (isLogged) {
+//         this._router.navigateByUrl(this.decksUrl);
+//       }
+//     } else if (!isLogged) {
+//       this._router.navigateByUrl(this.loginUrl);
+//     }
+// això és el callback de subscribe
